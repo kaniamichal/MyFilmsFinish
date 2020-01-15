@@ -15,7 +15,7 @@ public class DbManager {
 
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(DbManager.class));
 
-    private static final String JDBC_DRIVER_HD = "jdbc:h2: /filmsDB";
+    private static final String JDBC_DRIVER_HD = "jdbc:h2:./filmsDB";
 
     private static final String USER = "admin";
     private static final String PASS = "pass";
@@ -26,12 +26,13 @@ public class DbManager {
         createConnectionSource();
         dropTable(); // Delete table
         createTable();
-        closeConnectionSource();
+        //closeConnectionSource();
     }
 
     private static void createConnectionSource() {
         try {
             connectionSource = new JdbcConnectionSource(JDBC_DRIVER_HD, USER, PASS);
+              //      DriverManager.getConnection(JDBC_DRIVER_HD, USER, PASS);
 
         } catch (SQLException e) {
             LOGGER.warning(e.getMessage());

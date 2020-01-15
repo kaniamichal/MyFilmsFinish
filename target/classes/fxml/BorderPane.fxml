@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.Pane?>
+<BorderPane id="BorderPane" fx:id="BorderPane" prefHeight="600.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myFilms.Controllers.MainController">
+  <top>
+    <VBox>
+        <fx:include fx:id="menuBar" source="MenuBar.fxml" />
+        <fx:include fx:id="menuButtons" source="MenuButtons.fxml" />
+    </VBox>
+  </top>
+  
+
+   <center>
+<Pane>
+
+</Pane>
+   </center>
+
+</BorderPane>

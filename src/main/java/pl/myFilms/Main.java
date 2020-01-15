@@ -7,6 +7,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.myFilms.Utilities.FxmlUtilities;
 
+import static pl.myFilms.database.dbutils.DbManager.initDatabase;
+
 /**
  * Created by kaniamichal January 2020
  */
@@ -26,7 +28,6 @@ public class Main extends Application {
     }
 
     private static Stage mainStage;
-
     private BorderPane borderPane;
 
 
@@ -38,6 +39,9 @@ public class Main extends Application {
         mainStage.setScene(scene);
         mainStage.setTitle(FxmlUtilities.getResourceBundle().getString("title.aplication"));
         mainStage.show();
+
+        initDatabase();
+      // FillDatabase.fillDatabase();
     }
 /*działający start
     public void start(Stage primaryStage) throws Exception {

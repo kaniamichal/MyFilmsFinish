@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Box?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="pl.myFilms.Controllers.SearchController" prefHeight="600">
+    <children>
+        <fx:include fx:id="BorderPane" source="BorderPane.fxml" prefWidth="-Infinity" prefHeight="-Infinity"/>
+        <HBox id="SearchFxml" fx:id="SearchFxml" alignment="TOP_CENTER" spacing="20.0">
+
+            <Label text="%search"/>
+            <TextField/>
+            <Button mnemonicParsing="false" text="%search"/>
+
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>
+

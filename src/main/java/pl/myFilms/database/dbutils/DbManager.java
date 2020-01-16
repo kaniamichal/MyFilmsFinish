@@ -26,7 +26,7 @@ public class DbManager {
         createConnectionSource();
       //  dropTable(); // Delete table
         createTable();
-        closeConnectionSource();
+        //closeConnectionSource();
     }
 
     private static void createConnectionSource() {

@@ -41,7 +41,7 @@ public class Main extends Application {
         mainStage.show();
 
         initDatabase();
-      // FillDatabase.fillDatabase();
+     //FillDatabase.fillDatabase();
     }
 /*działający start
     public void start(Stage primaryStage) throws Exception {

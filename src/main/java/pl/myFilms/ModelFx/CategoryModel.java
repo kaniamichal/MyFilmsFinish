@@ -50,7 +50,7 @@ public class CategoryModel {
         return categoryFxObservableList;
     }
 
-    public void setCategoryFxObservableList(ObservableList<CategoryFx> categoryFxObservableList) {
+    public void setCategoryFxObservableList() {
         this.categoryFxObservableList = categoryFxObservableList;
     }
 

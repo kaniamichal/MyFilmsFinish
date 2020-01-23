@@ -19,6 +19,8 @@ public class AddCategoryControler {
     private CategoryModel categoryModel;
     @FXML
     private Button deleteCategoryButton;
+    @FXML
+    private Button editCategoryButton;
 
     @FXML
     public void initialize() throws ApplicationException {
@@ -32,6 +34,7 @@ public class AddCategoryControler {
     private void initRelations() {
         this.categoryAddButton.disableProperty().bind(categoryTextField.textProperty().isEmpty());
         this.deleteCategoryButton.disableProperty().bind(this.categoryModel.categoryFxObjectPropertyProperty().isNull());
+        this.editCategoryButton.disableProperty().bind(this.categoryModel.categoryFxObjectPropertyProperty().isNull());
     }
 
 
@@ -52,7 +55,14 @@ public class AddCategoryControler {
 
 
     public void actionCategoryComboBox() {
-        System.out.println("actionCategoryComboBox actionCategoryComboBox actionCategoryComboBox");
         this.categoryModel.setCategoryFxObjectProperty(this.categoryComboBox.getSelectionModel().getSelectedItem());
     }
+/*
+    public void editCategory() {
+        String newCategoryName = DialogsUtilities.editDialog(this.categoryModel.getCategoryFxObservableList().getClass().getName();
+        //   if (newCategoryName != null) {
+           /* this.categoryModel.setCategoryFxObservableList().set
+                    setName(newCategoryName);
+            Category.class.getMethod().getName;
+    }*/
 }

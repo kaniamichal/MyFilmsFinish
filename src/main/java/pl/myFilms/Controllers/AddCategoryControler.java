@@ -57,9 +57,9 @@ public class AddCategoryControler {
     public void actionCategoryComboBox() {
         this.categoryModel.setCategoryFxObjectProperty(this.categoryComboBox.getSelectionModel().getSelectedItem());
     }
-/*
-    public void editCategory() {
-        String newCategoryName = DialogsUtilities.editDialog(this.categoryModel.getCategoryFxObservableList().getClass().getName();
+
+    public void editCategory() {}
+     //   String newCategoryName = DialogsUtilities.editDialog(this.categoryModel.getCategoryFxObservableList().getClass().getName();
         //   if (newCategoryName != null) {
            /* this.categoryModel.setCategoryFxObservableList().set
                     setName(newCategoryName);

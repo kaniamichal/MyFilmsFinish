@@ -5,14 +5,15 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="600" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myFilms.Controllers.AddCategoryControler">
+<VBox alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="900.0" spacing="10.0"
+      xmlns="http://javafx.com/javafx/8.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myFilms.Controllers.CategoryController">
     <children>
-        <fx:include fx:id="BorderPane" prefHeight="-Infinity" prefWidth="-Infinity" source="BorderPane.fxml" />
-        <HBox id="AddCategoryfxml" fx:id="addCategoryfxml" alignment="TOP_CENTER" spacing="20.0">
-
+        <fx:include fx:id="BorderPane" prefHeight="-Infinity" prefWidth="900.0" source="BorderPane.fxml" VBox.vgrow="ALWAYS" />
+        <HBox id="AddCategoryfxml" fx:id="addCategoryfxml" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="900.0" spacing="10.0" VBox.vgrow="ALWAYS">
             <Label text="%add.Category" />
             <TextField fx:id="categoryTextField" />
             <Button fx:id="categoryAddButton" mnemonicParsing="false" onAction="#addCategoryOnAction" text="%addCategoryButtonAdd" />
@@ -20,13 +21,19 @@
             <ComboBox fx:id="categoryComboBox" onAction="#actionCategoryComboBox" prefWidth="150.0" />
          <Button fx:id="editCategoryButton" mnemonicParsing="false" onAction="#editCategory" text="%Edit" />
          <Button fx:id="deleteCategoryButton" layoutX="772.0" layoutY="30.0" mnemonicParsing="false" onAction="#deleteCategoryButton" text="%delete.Button" />
-
-            <VBox.margin>
-                <Insets />
-            </VBox.margin>
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-            </padding>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
         </HBox>
+      <TreeView fx:id="categoryTreeView" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWidth="900.0" showRoot="false" VBox.vgrow="ALWAYS">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin></TreeView>
     </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </VBox>

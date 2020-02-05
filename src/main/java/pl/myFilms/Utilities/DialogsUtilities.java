@@ -40,6 +40,7 @@ public class DialogsUtilities {
 
     public static String editDialog(String value) {
         TextInputDialog dialog = new TextInputDialog(value);
+        dialog.getEditor().clear();
         dialog.setTitle(bundle.getString("edit.title"));
         dialog.setHeaderText(bundle.getString("edit.header"));
         dialog.setContentText(bundle.getString("edit.content"));
@@ -49,4 +50,14 @@ public class DialogsUtilities {
         }
         return null;
     }
+
+    public static void initDialog (String error) {
+        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+        errorAlert.setTitle(bundle.getString("error.title"));
+        errorAlert.setHeaderText(bundle.getString("error.header"));
+        errorAlert.getDialogPane().setContentText(bundle.getString("error.get.dao"));
+        errorAlert.showAndWait();
+    }
+
+
 }

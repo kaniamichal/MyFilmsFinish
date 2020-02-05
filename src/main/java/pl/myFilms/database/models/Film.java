@@ -8,7 +8,7 @@ import java.util.Date;
 @DatabaseTable(tableName = "FILMS")
 public class Film implements BaseModel {
 
-    public static final String AUTHOR_ID = "AUTHOR_ID";
+    public static final String DIRECTOR_ID = "AUTHOR_ID";
     public static final String CATEGORY_ID = "CATEGORY_ID";
 
     public Film() {
@@ -17,9 +17,9 @@ public class Film implements BaseModel {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField(columnName = AUTHOR_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = DIRECTOR_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false) //
     private Director director;
-    @DatabaseField(columnName = CATEGORY_ID, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = CATEGORY_ID,foreign = true,  foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false) //
     private Category category;
 
     @DatabaseField(columnName = "TITLE", canBeNull = false)

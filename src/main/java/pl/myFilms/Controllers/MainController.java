@@ -1,34 +1,59 @@
 package pl.myFilms.Controllers;
 
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import pl.myFilms.Main;
 import pl.myFilms.Utilities.DialogsUtilities;
 import pl.myFilms.Utilities.FxmlUtilities;
 
+import java.util.Optional;
+
+/**
+ * Created by kaniamichal on January 2020
+ */
+
 public class MainController {
-
-
+    @FXML
+    private HBox menuButtons;
+    @FXML
+    private MenuBar menuBar;
     @FXML //for initialize methods
-    private BorderPane borderPane;
+    private static BorderPane BorderPane;
 
     @FXML //Add MenuButtons to main BorderPane
     private MenuButtonsController menuButtonsController;
+
+    @FXML
+    private CheckMenuItem setAlwaysOnTop;
+    @FXML
+    private RadioMenuItem ModenaCSS;
+    @FXML
+    private ToggleGroup radioMenuItemGroup;
+    @FXML
+    private RadioMenuItem CaspianCSS;
+
 
     //przekazanie do MenuButtonsController referencji do MainController, by móc sterować BorderPane,
     private void initialize() {
         menuButtonsController.setMainController(this);
     }
 
-    //  public void setCenter(String fxmlPath){borderPane.setCenter(fxmlPath);}
-
 
     public BorderPane getBorderPane() {
-        return borderPane = getBorderPane();
+        return BorderPane = getBorderPane();
 
+    }
+
+    public void setCenter(String fxmlPath){
+        BorderPane.setCenter(FxmlUtilities.fxmlLoader(fxmlPath));
     }
 
     //Methods to show new forms in new stage
@@ -37,6 +62,7 @@ public class MainController {
         Pane loader = FxmlUtilities.fxmlLoader(fxmlPath);
 
         try {
+            assert loader != null;
             Scene sceneNew = new Scene(loader);
             Stage mainStage = Main.getMainStage();
             mainStage.setScene(sceneNew);
@@ -46,19 +72,37 @@ public class MainController {
             DialogsUtilities.errorDialog(e.getMessage());
         }
     }
-    /*public void exportToJson (ActionEvent e) throws IOException {
 
-        SceneFactory exportSceneFactory = new ExportSceneFactory();
-        Stage mainWindow = Main.getMainStage();
-        mainWindow.setScene(exportSceneFactory.build());
+
+
+    public void closeApp() {
+        Optional<ButtonType> result = DialogsUtilities.confirmDialog();
+        if (result.get() == ButtonType.OK) {
+            Platform.exit();
+            System.exit(0);
+        }
     }
-    public Scene build() throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("view/export.fxml"));
-        root.getStylesheets().add(
-                Main.class.getResource("view/style/main.css").toExternalForm()
-        );
-        return new Scene(root, 1200, 800);
-    }*/
+
+    public void CaspianCSS(ActionEvent actionEvent) {
+        Application.setUserAgentStylesheet(Application.STYLESHEET_CASPIAN);
+    }
+
+    public void ModenaCSS(ActionEvent actionEvent) {
+        Application.setUserAgentStylesheet(Application.STYLESHEET_MODENA);
+    }
+
+    public void setAlwaysOnTop(ActionEvent actionEvent) {
+        Stage stage = (Stage) BorderPane.getScene().getWindow();
+        boolean value = ((CheckMenuItem) actionEvent.getSource()).selectedProperty().get();
+        stage.setAlwaysOnTop(value);
+
+    }
+
+    public void about() {
+        DialogsUtilities.dialogAboutApplications();
+    }
+
+
 }
 
 

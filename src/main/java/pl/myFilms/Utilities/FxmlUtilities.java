@@ -18,6 +18,12 @@ public class FxmlUtilities {
         }
         return null;
     }
+    public static FXMLLoader getLoader (String fxmlPath) {
+        //Locale.setDefault(new Locale("pl"));
+        FXMLLoader loader = new FXMLLoader(FxmlUtilities.class.getResource(fxmlPath));
+        loader.setResources(getResourceBundle());
+      return loader;
+    }
 
     public static ResourceBundle getResourceBundle() {
         return ResourceBundle.getBundle("bundles.messages");

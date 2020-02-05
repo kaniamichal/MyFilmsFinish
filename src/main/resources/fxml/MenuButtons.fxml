@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
-
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myFilms.Controllers.MenuButtonsController">
+<HBox alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="900.0" spacing="10.0"
+      xmlns="http://javafx.com/javafx/8.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.myFilms.Controllers.MenuButtonsController">
    <children>
       <ToggleButton mnemonicParsing="false" onAction="#allFilms" prefHeight="85.0" prefWidth="150.0" text="%all.Films">
          <toggleGroup>
@@ -15,8 +14,6 @@
       <ToggleButton mnemonicParsing="false" onAction="#addFilms" prefHeight="85.0" prefWidth="150.0" text="%add.Films" toggleGroup="$ToggleButtonsGroup" />
       <ToggleButton mnemonicParsing="false" onAction="#addAuthor" prefHeight="85.0" prefWidth="150.0" text="%add.Author" toggleGroup="$ToggleButtonsGroup" />
       <ToggleButton mnemonicParsing="false" onAction="#addCategory" prefHeight="85.0" prefWidth="150.0" text="%add.Category" toggleGroup="$ToggleButtonsGroup" />
-      <ToggleButton fx:id="searchButton" mnemonicParsing="false" onAction="#search" prefHeight="85.0" prefWidth="150.0" text="%search" toggleGroup="$ToggleButtonsGroup" />
-      <ToggleButton mnemonicParsing="false" onAction="#stats" prefHeight="85.0" prefWidth="150.0" text="%stats" toggleGroup="$ToggleButtonsGroup" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

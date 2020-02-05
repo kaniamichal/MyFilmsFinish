@@ -5,9 +5,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import pl.myFilms.Utilities.FillDatabase;
 import pl.myFilms.Utilities.FxmlUtilities;
-
-import static pl.myFilms.database.dbutils.DbManager.initDatabase;
+import pl.myFilms.database.dbutils.DbManager;
 
 /**
  * Created by kaniamichal January 2020
@@ -39,9 +39,8 @@ public class Main extends Application {
         mainStage.setScene(scene);
         mainStage.setTitle(FxmlUtilities.getResourceBundle().getString("title.aplication"));
         mainStage.show();
-
-        initDatabase();
-     //FillDatabase.fillDatabase();
+        DbManager.initDatabase();
+        FillDatabase.fillDatabase();
     }
 /*działający start
     public void start(Stage primaryStage) throws Exception {
